@@ -18,7 +18,10 @@ class SalesController extends Controller
             'item' => 'required|string',
             'amount' => 'required',
         ]);
+
+
         // dd($request->all());
+
         $sales = new Sales();
         $sales->item = $request->item;
         $sales->amount = $request->amount;

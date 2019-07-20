@@ -14,11 +14,15 @@ class SalesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+        // validate user input
         $request->validate([
             'item' => 'required|string',
             'amount' => 'required',
         ]);
+
+
         // dd($request->all());
+
         $sales = new Sales();
         $sales->item = $request->item;
         $sales->amount = $request->amount;
